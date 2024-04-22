@@ -88,7 +88,7 @@ VALUES ('Пицца большая Пепперони', 899, 5),
        ('Пирог с курицей', 599, 10);
 INSERT INTO PaymentMethod (method)
 VALUES ('Наличные'),
-	   ('Карта'),
+       ('Карта'),
        ('Картой при получении');
 INSERT INTO Orders (dateAndTime, deliveryaddress, clientID, courierID, PaymentMethodID, dishID)
 VALUES ('2024-04-03 14:38:57', 'Калинина ул., д. 12 кв.205', 10, 1, 1, 1),
