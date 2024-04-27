@@ -29,7 +29,7 @@ CREATE TABLE PaymentMethod (
   );
 CREATE TABLE Orders (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  dateAndTime DATETIME,
+  createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
   deliveryAddress TEXT,
   clientID INTEGER,
   courierID INTEGER,
@@ -91,7 +91,7 @@ INSERT INTO PaymentMethod (method)
 VALUES ('Наличные'),
        ('Карта'),
        ('Картой при получении');
-INSERT INTO Orders (dateAndTime, deliveryaddress, clientID, courierID, PaymentMethodID, dishID)
+INSERT INTO Orders (createdAt, deliveryaddress, clientID, courierID, PaymentMethodID, dishID)
 VALUES ('2024-04-03 14:38:57', 'Калинина ул., д. 12 кв.205', 10, 1, 1, 1),
        ('2024-04-03 16:10:54', 'Южная ул., д. 7 кв.86', 8, 3, 1, 2),
        ('2024-04-09 12:41:39', 'Зеленая ул., д. 16 кв.50', 7, 2, 2, 3), 
