@@ -1,33 +1,33 @@
-CREATE TABLE Canteens (
+CREATE TABLE Canteens IF NOT EXISTS (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT,
   address TEXT
   );
-CREATE TABLE Clients (
+CREATE TABLE Clients IF NOT EXISTS (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   fullName TEXT,
   gender VARCHAR(1),
   phoneNumber TEXT
   );
-CREATE TABLE Couriers (
+CREATE TABLE Couriers IF NOT EXISTS (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   fullName TEXT,
   gender VARCHAR(1),
   dateOfBirth DATE,
   phoneNumber TEXT
   );
-CREATE TABLE Dishes (
+CREATE TABLE Dishes IF NOT EXISTS (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT,
   price INTEGER NOT NULL,
   canteenID INTEGER,
   FOREIGN KEY (canteenID) REFERENCES Canteens (id)
   );
-CREATE TABLE PaymentMethod (
+CREATE TABLE PaymentMethod IF NOT EXISTS (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   method TEXT
   );
-CREATE TABLE Orders (
+CREATE TABLE Orders IF NOT EXISTS (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   dateAndTime DATETIME,
   deliveryAddress TEXT,
@@ -63,7 +63,8 @@ VALUES ('Киселев Артем', 'М', '89505377540'),
        ('Рожкова Виктория', 'Ж', '89325437629'),
        ('Горелов Григорий', 'М', '89425437629'),
        ('Моисеев Фёдор', 'М', '89525437629'),
-       ('Иванов Павел', 'М', '89625437629');
+       ('Иванов Павел', 'М', '89625437629'),
+       ('Александр Пушкин', 'М', '89762265175');
 INSERT INTO Couriers (fullname, gender, dateOfBirth, phoneNumber)
 VALUES ('Горюнов Фёдор', 'М', '1998-03-12', '89495618287'),
        ('Назарова Марьям', 'Ж', '2002-03-28', '89495600035'),
